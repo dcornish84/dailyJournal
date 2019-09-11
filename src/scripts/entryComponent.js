@@ -1,14 +1,32 @@
-const createEntry = {
-    makeJournalEntryComponent(entry) {
-        return `
-        <article>
-        <section>${entry.date}</section>
-        <section>${entry.concepts}</section>
-        <section>${entry.entry} </section>
-        <section>${entry.mood}</section>
-    <article>
-`
+import makeJournalEntryComponent from "./entriesDOM.js"
+
+
+const journalEntries = (entries) =>{
+    let entryLog = document.querySelector(".entryLog");
+    for (let i = 0; i < entries.length; i++){
+        entryLog.innerHTML += makeJournalEntryComponent(entries[i]);
     }
 }
 
-export default createEntry
+
+export default journalEntries
+
+
+
+
+// const journalEntries = {
+//     addToJournal(dataArray) {
+//         dataArray.forEach(element => {
+//             let entryHTML = createEntry.makeJournalEntryComponent(element)
+//             entriesDom.createPhrase.innerHTML += entryHTML
+//         })
+
+//     }
+
+// }
+
+// const entriesDom = {
+//     createPhrase: document.querySelector(".entrylog"),
+
+// }
+

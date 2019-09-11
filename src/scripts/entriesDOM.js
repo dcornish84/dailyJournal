@@ -1,20 +1,19 @@
-import createEntry from "./entryComponent.js"
 
 
-const journalEntries = {
-    addToJournal(dataArray) {
-        dataArray.forEach(element => {
-            let entryHTML = createEntry.makeJournalEntryComponent(element)
-            entriesDom.createPhrase.innerHTML += entryHTML
-        })
 
+
+const makeJournalEntryComponent = (entry) =>{
+        return `
+        <article>
+        <section>${entry.date}</section>
+        <section>${entry.concepts}</section>
+        <section>${entry.entry} </section>
+        <section>${entry.mood}</section>
+    <article>
+`
     }
 
-}
 
-const entriesDom = {
-    createPhrase: document.querySelector(".entrylog"),
 
-}
 
-export default journalEntries
+export default makeJournalEntryComponent

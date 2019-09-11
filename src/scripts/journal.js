@@ -2,4 +2,6 @@ import API from "./data.js"
 import journalEntries from "./entriesDom.js"
 
 
-API.getJournalEntries().then(data => {journalEntries.addToJournal(data)})
+API.getJournalEntries()
+.then(data => {
+    journalEntries(data)})
