@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Daily Journal</title>
+    <link rel="stylesheet" href="../src/styles/journal.css">
+    <link href="https://fonts.googleapis.com/css?family=Copse&display=swap" rel="stylesheet">
+</head>
+
+<body>
+   
+    <h1>Daily Journal</h1>
+
+        <form action="Journal">
+        <div class="flex-container">
+
+        <div class="journalDate">
+            <fieldset>
+                <label for="JournalDate">Date of entry</label>
+                <input type="date" name="journalDate" id="journalDate">
+            </fieldset>
+        </div>
+
+        <div class="conceptsCovered">
+            <fieldset>
+                <label for="conceptsCovered">Concepts Covered</label>
+                <input type="conceptsCovered" name="conceptsCovered" id="conceptsCovered">
+            </fieldset>
+        </div>
+
+        <div class="journalEntry">
+            <fieldset>
+                <label for="journalEntry">Journal Entry</label>
+                <textarea name="journalEntry" id="journalEntry" cols="30" rows="5"></textarea>
+            </fieldset>
+        </div>    
+
+        <div class="moodForTheDay">
+
+            <fieldset>
+                <label for="moodForTheDay">Mood for the Day</label>
+                <select>
+                    <option value="Sad">Sad</option>
+                    <option value="Happy">Happy</option>
+                    <option value="Existiential Crisis">Existiential Crisis</option>
+                    <option value="Meh">Meh</option>
+                </select>
+            </fieldset>
+        </div>
+
+        <div class="record">
+            
+                <button class="recordEntryButton" type="button">Record Journal Entry</button>
+                
+           
+        </div>
+    </form>
+
+    <article class="entryLog">
+
+    </article>
+
+<script src="../src/scripts/journal.js"></script>
+</body>
+
+</html>
