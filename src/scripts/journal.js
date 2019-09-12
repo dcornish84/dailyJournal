@@ -2,6 +2,7 @@ import API from "./data.js";
 import journalEntries from "./entriesDom.js";
 
 
+
 API.fetchJournalEntries().then((allEntries) => {
     allEntries.forEach(entries =>   {
     journalEntries(entries)})
@@ -20,7 +21,7 @@ document.querySelector(".recordEntryButton").addEventListener("click", () => {
 
 API.createEntry(newJournalEntry).then(() => {
 
-    API.fetchJournalEntries().then((allEntries)) => {
+    API.fetchJournalEntries().then((allEntries) => {
         allEntries.forEach(entries => {
 
             journalEntries(entries)})
