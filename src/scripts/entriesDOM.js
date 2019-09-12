@@ -13,21 +13,7 @@ const journalEntries = (entries) =>{
 export default journalEntries
 
 
-// const journalEntries = {
-//     addToJournal(dataArray) {
-//         dataArray.forEach(element => {
-//             let entryHTML = createEntry.makeJournalEntryComponent(element)
-//             entriesDom.createPhrase.innerHTML += entryHTML
-//         })
 
-//     }
-
-// }
-
-// const entriesDom = {
-//     createPhrase: document.querySelector(".entrylog"),
-
-// }
 
 
 
