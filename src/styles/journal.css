@@ -36,6 +36,7 @@ body {
     box-shadow: 0 0 10px #666;
     padding-top: 10px;
     color: whitesmoke;
+    width: 17%;
 }
 
 .conceptsCovered {
@@ -46,6 +47,7 @@ body {
     box-shadow: 0 0 10px #666;
     padding-top: 10px;
     color: whitesmoke;
+    width: 17%;
 }
 
 .journalEntry {
@@ -57,6 +59,7 @@ body {
     box-shadow: 0 0 10px #666;
     padding-top: 10px;
     color: whitesmoke;
+    width: 34%;
 }
 
 .moodForTheDay {
@@ -67,6 +70,7 @@ body {
     box-shadow: 0 0 10px #666;
     padding-top: 10px;
     color: whitesmoke;
+    width: 17%;
 }
 
 .record {
