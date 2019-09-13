@@ -1,6 +1,7 @@
 
 import makeJournalEntryComponent from "./entryComponent.js"
 
+// putting entries on the DOM
 
 const journalEntries = (entries) =>{
     let entryLog = document.querySelector(".entryLog");
@@ -11,6 +12,9 @@ const journalEntries = (entries) =>{
 
 
 export default journalEntries
+
+
+
 
 
 

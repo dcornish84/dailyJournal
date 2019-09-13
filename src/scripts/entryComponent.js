@@ -1,3 +1,4 @@
+// represents what my entry will look like in HTML
 
 const makeJournalEntryComponent = (entry) =>{
     return `
@@ -9,8 +10,6 @@ const makeJournalEntryComponent = (entry) =>{
 <article>
 `
 }
-
-
 
 
 export default makeJournalEntryComponent
