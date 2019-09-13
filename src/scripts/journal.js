@@ -1,11 +1,11 @@
 import API from "./data.js";
-import journalEntries from "./entriesDom.js";
+import addjournalEntriesToDom from "./entriesDom.js";
 import entryFactoryWorker from "./entryFactory.js";
 
 
-API.fetchJournalEntries().then((allEntries) => {
+API.journalEntries().then((allEntries) => {
     allEntries.forEach(entries =>   {
-    journalEntries(entries)})
+        addjournalEntriesToDom(entries)})
 })
 
 // Event listener for the Record Entry button
@@ -22,13 +22,13 @@ document.querySelector(".recordEntryButton").addEventListener("click", () => {
         console.log("new journal entry", newEntryObject)
     
     // save entry to json
-API.newEntry(newEntryObject).then(() => {
+API.newJournalEntry(newEntryObject).then(() => {
 
     // get all the entries again
-    API.fetchJournalEntries().then((allEntries) => {
-        allEntries.forEach(entries => {
+    API.journalEntries().then((allEntries) => {
+        allEntries.forEach(entries =>   {
             // sends entry to the dom
-            journalEntries(entries)})
+            addjournalEntriesToDom(entries)})
 
         })
 

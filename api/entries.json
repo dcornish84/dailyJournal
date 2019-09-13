@@ -1,29 +1,34 @@
 {
-    "journalEntries" : [
-       {
-           "id": 1,
-           "date": "August 22nd 2019",
-           "concepts": "First Group Project",
-           "entry": "We finished up our first group project.  It's amazing how much we've done.",
-           "mood": "happy"
-       },
-       
-           {
-           "id": 2,
-           "date": "August 23rd 2019",
-           "concepts": "Presentation",
-           "entry": "We presented our first group project. I was nervous but I think we nailed it",
-           "mood": "happy"
-       },
-       
-       
-       {
-           "id": 3,
-           "date": "August 26th 2019",
-           "concepts": "Intro to JavaScript",
-           "entry": "We launched into JavaScript today.  This is going to be tough",
-           "mood": "existential crisis"
-       }
-       ]
-       
-       }
+  "journalEntries": [
+    {
+      "id": 1,
+      "date": "August 22nd 2019",
+      "concepts": "First Group Project",
+      "entry": "We finished up our first group project.  It's amazing how much we've done.",
+      "mood": "happy"
+    },
+    {
+      "id": 2,
+      "date": "August 23rd 2019",
+      "concepts": "Presentation",
+      "entry": "We presented our first group project. I was nervous but I think we nailed it",
+      "mood": "happy"
+    },
+    {
+      "id": 3,
+      "date": "August 26th 2019",
+      "concepts": "Intro to JavaScript",
+      "entry": "We launched into JavaScript today.  This is going to be tough",
+      "mood": "existential crisis"
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    }
+  ]
+}
