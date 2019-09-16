@@ -12,10 +12,10 @@ API.journalEntries().then((allEntries) => {
 document.querySelector(".recordEntryButton").addEventListener("click", () => {
     
     // values of the inputs
-    const date = document.querySelector(".journalDate").value
-    const concepts = document.querySelector(".conceptsCovered").value
-    const entry = document.querySelector(".journalEntry").value
-    const mood = document.querySelector(".moodForTheDay").value
+    const date = document.querySelector("#journalDates").value
+    const concepts = document.querySelector("#conceptsCoveredInput").value
+    const entry = document.querySelector("#journalEntryInput").value
+    const mood = document.querySelector("#moodInput").value
     
     // building a journal entry
     const newEntryObject = entryFactoryWorker(date, concepts, entry, mood)
