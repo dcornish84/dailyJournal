@@ -1,11 +1,12 @@
 import API from "./data.js";
-import addjournalEntriesToDom from "./entriesDom.js";
+import doctorDom from "./entriesDom.js";
 import entryFactoryWorker from "./entryFactory.js";
 
 
-API.journalEntries().then((allEntries) => {
-    allEntries.forEach(entries =>   {
-        addjournalEntriesToDom(entries)})
+API.journalEntries()
+.then((allEntries) => {
+    allEntries.forEach(data =>   {
+        doctorDom.addjournalEntriesToDom(data)})
 })
 
 // Event listener for the Record Entry button
@@ -25,8 +26,8 @@ document.querySelector(".recordEntryButton").addEventListener("click", () => {
 API.newJournalEntry(newEntryObject).then(() => {
 
     // get all the entries again
-    API.journalEntries().then((allEntries) => {
-        allEntries.forEach(entries =>   {
+    API.journalEntries().then((newEntryObject) => {
+        newEntryObject.forEach(entries =>   {
             // sends entry to the dom
             addjournalEntriesToDom(entries)})
 
@@ -36,5 +37,15 @@ API.newJournalEntry(newEntryObject).then(() => {
 
 })
 
+const moodStuff = document.getElementsByName("moodFire");
 
-
+moodStuff.forEach(radioButton => {
+    radioButton.addEventListener("click", event => {
+        const moodName = event.target.value;
+        console.log(moodName);
+        API.journalEntries()
+        .then(data => {
+            doctorDom.filtermood(data, moodName);
+        });
+    })
+})

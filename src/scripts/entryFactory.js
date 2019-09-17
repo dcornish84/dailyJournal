@@ -2,10 +2,10 @@
 
 const entryFactoryWorker = (date, concept, entry, mood) => {
     const freshEntry = {
-        Date: date,
-        Concepts: concept,
-        Entry: entry,
-        Mood: mood
+        date: date,
+        concepts: concept,
+        entry: entry,
+        mood: mood
     }
     return freshEntry
 }

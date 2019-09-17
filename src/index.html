@@ -43,17 +43,35 @@
             <fieldset>
                 <label for="moodForTheDay">Mood for the Day</label>
                 <select id="moodInput">
-                    <option value="Sad">Sad</option>
+                    <option value="Mellow">Mellow</option>
+                    <option value="Cheerful">Cheerful</option>
+                    <option value="Stressed">Stressed</option>
                     <option value="Happy">Happy</option>
+                    <option value="Giddy">Giddy</option>
                     <option value="Existiential Crisis">Existiential Crisis</option>
-                    <option value="Meh">Meh</option>
+                    <option value="Cranky">Cranky</option>
                 </select>
             </fieldset>
         </div>
-
+        
         <div class="record">
             <button class="recordEntryButton" type="button">Record Journal Entry</button>
         </div>
+
+        <div class="selectMood" id="filerByMood">  
+                <fieldset>
+                <legend>Filter Journal Entries by Mood</legend>
+                <input type="radio" name="moodFire"  value="Mellow"><label>Mellow</label>
+                <input type="radio" name="moodFire"  value="Cheerful"><label>Cheerful</label>
+                <input type="radio" name="moodFire"  value="Stressed"><label>Stressed</label>
+                <input type="radio" name="moodFire"  value="Happy"><label>Happy</label>
+                <input type="radio" name="moodFire"  value="Giddy"><label>Giddy</label>
+                <input type="radio" name="moodFire"  value="Existential Crisis"><label>Existential Crisis</label>
+                <input type="radio" name="moodFire"  value="Cranky"><label>Cranky</label>
+                </fieldset>
+            </div>
+
+
     </form>
 
     <article class="entryLog">

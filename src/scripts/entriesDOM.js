@@ -3,15 +3,31 @@ import makeJournalEntryComponent from "./entryComponent.js"
 
 // putting entries on the DOM
 
-const addjournalEntriesToDom = (entries) => {
-    document.querySelector(".entryLog").innerHTML += makeJournalEntryComponent(entries)
+const doctorDom = {
+
+    addjournalEntriesToDom: (entries) => {
+        document.querySelector(".entryLog").innerHTML += makeJournalEntryComponent(entries)
+    },
+
+    filterMood: (entries, mood) => {
+        let entryLog = document.querySelector(".entryLog");
+        entryLog.innerHTML = "";
+        entries.forEach(entry => {
+            if (entry.mood === mood) {
+                entryLog.innerHTML += addjournalEntriesToDom(entry);
+            }
+        });
+
+
 }
 
-export default addjournalEntriesToDom
 
 
 
 
+
+
+}
 
 // const addjournalEntriesToDom = (entries) =>{
 //     let entryLog = document.querySelector(".entryLog");
@@ -21,7 +37,7 @@ export default addjournalEntriesToDom
 // }
 
 
-
+export default doctorDom;
 
 
 
