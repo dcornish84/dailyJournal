@@ -1,43 +1,27 @@
 
-import makeJournalEntryComponent from "./entryComponent.js"
+import createThing from "./entryComponent.js"
 
 // putting entries on the DOM
 
-const doctorDom = {
-
-    addjournalEntriesToDom: (entries) => {
-        document.querySelector(".entryLog").innerHTML += makeJournalEntryComponent(entries)
-    },
-
-    filterMood: (entries, mood) => {
-        let entryLog = document.querySelector(".entryLog");
-        entryLog.innerHTML = "";
-        entries.forEach(entry => {
-            if (entry.mood === mood) {
-                entryLog.innerHTML += addjournalEntriesToDom(entry);
-            }
+const addjournalEntriesToDom = {
+    createdEntry(data) {
+        data.forEach(cat => {
+            let createThing = document.querySelector(".entryLog");
+            let actualEntry = createThing.makeJournalEntryComponent(cat)
+            createThing.innerHTML += actualEntry
         });
-
-
+    },
+    journalFilter: (entries, mood) => {
+        let entryLog = document.querySelector(".entryLog");
+        entryLog.innerHTML = "",
+            entries.ForEach(entry => {
+                if (entry.mood.toMyJournal() === mood.toMyJournal()) {
+                    entryLog.innerHtML += createThing.makeJournalEntryComponent(entry);
+                }
+            })
+    }
 }
 
-
-
-
-
-
-
-}
-
-// const addjournalEntriesToDom = (entries) =>{
-//     let entryLog = document.querySelector(".entryLog");
-//     for (let i = 0; i < entries.length; i++){
-//         entryLog.innerHTML += makeJournalEntryComponent(entries[i]);
-//     }
-// }
-
-
-export default doctorDom;
-
+export default addjournalEntriesToDom;
 
 

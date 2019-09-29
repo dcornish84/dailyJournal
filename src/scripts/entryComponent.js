@@ -1,18 +1,15 @@
 // represents what my entry will look like in HTML
 
-const makeJournalEntryComponent = (entry) =>{
+const createThing = (entry) => {
     return `
-    <article>
-    <section>${entry.date}</section>
-    <section>${entry.concepts}</section>
-    <section>${entry.entry} </section>
-    <section>${entry.mood}</section>
-<article>
-`
+    <div>
+    <p>${entry.date}</p>
+    <p>${entry.concepts}</p>
+    <p>${entry.entry} </p>
+    <p>${entry.mood}</p>
+    </div>
+            `
 }
 
 
-export default makeJournalEntryComponent
-
-
-
+export default createThing

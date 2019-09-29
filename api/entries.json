@@ -21,5 +21,6 @@
       "entry": "We launched into JavaScript today.  This is going to be tough",
       "mood": "existential crisis"
     }
-  ]
+  ],
+  "mood": []
 }
