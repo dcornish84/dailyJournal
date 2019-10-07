@@ -11,73 +11,94 @@
 </head>
 
 <body>
-   <h1>Daily Journal</h1>
+    <h1>Daily Journal</h1>
 
-        <form action="Journal">
+    <form action="Journal">
         <div class="flex-container">
 
-        <div class="journalDate">
-            <fieldset>
-                <label for="JournalDate">Date of entry</label>
-                <input type="date" name="journalDate" id="journalDates">
-            </fieldset>
-        </div>
-
-        <div class="conceptsCovered">
-            <fieldset>
-                <label for="conceptsCovered">Concepts Covered</label>
-                <input type="conceptsCovered" name="conceptsCovered" id="conceptsCoveredInput">
-            </fieldset>
-        </div>
-
-        <div class="journalEntry">
-            <fieldset>
-                <label for="journalEntry">Journal Entry</label>
-                <textarea name="journalEntry" id="journalEntryInput" cols="50" rows="10"></textarea>
-            </fieldset>
-        </div>
-
-        <div class="moodForTheDay">
-
-            <fieldset>
-                <label for="moodForTheDay">Mood for the Day</label>
-                <select id="moodInput">
-                    <option value="Mellow">Mellow</option>
-                    <option value="Cheerful">Cheerful</option>
-                    <option value="Stressed">Stressed</option>
-                    <option value="Happy">Happy</option>
-                    <option value="Giddy">Giddy</option>
-                    <option value="Existiential Crisis">Existiential Crisis</option>
-                    <option value="Cranky">Cranky</option>
-                </select>
-            </fieldset>
-        </div>
-
-        <div class="record">
-            <button class="recordEntryButton" type="button">Record Journal Entry</button>
-        </div>
-
-        <div class="selectMood" id="filerByMood">
+            <div class="journalDate">
                 <fieldset>
-                <legend>Filter Journal Entries by Mood</legend>
-                <input type="radio" name="moodFire"  value="Mellow"><label>Mellow</label>
-                <input type="radio" name="moodFire"  value="Cheerful"><label>Cheerful</label>
-                <input type="radio" name="moodFire"  value="Stressed"><label>Stressed</label>
-                <input type="radio" name="moodFire"  value="Happy"><label>Happy</label>
-                <input type="radio" name="moodFire"  value="Giddy"><label>Giddy</label>
-                <input type="radio" name="moodFire"  value="Existential Crisis"><label>Existential Crisis</label>
-                <input type="radio" name="moodFire"  value="Cranky"><label>Cranky</label>
+                    <label for="JournalDate">Date of entry</label>
+                    <input type="date" name="journalDate" id="journalDates">
                 </fieldset>
             </div>
 
+            <div class="conceptsCovered">
+                <fieldset>
+                    <label for="conceptsCovered">Concepts Covered</label>
+                    <input type="conceptsCovered" name="conceptsCovered" id="conceptsCoveredInput">
+                </fieldset>
+            </div>
 
+            <div class="journalEntry">
+                <fieldset>
+                    <label for="journalEntry">Journal Entry</label>
+                    <textarea name="journalEntry" id="journalEntryInput" cols="50" rows="10"></textarea>
+                </fieldset>
+            </div>
+
+            <div class="moodForTheDay">
+
+                <fieldset>
+                    <label for="moodForTheDay">Mood for the Day</label>
+                    <select id="moodInput">
+                        <option value="Mellow">Mellow</option>
+                        <option value="Cheerful">Cheerful</option>
+                        <option value="Stressed">Stressed</option>
+                        <option value="Happy">Happy</option>
+                        <option value="Giddy">Giddy</option>
+                        <option value="Existiential Crisis">Existiential Crisis</option>
+                        <option value="Cranky">Cranky</option>
+                    </select>
+                </fieldset>
+            </div>
+
+            <div class="record">
+                <button class="recordEntryButton" type="button">Record Journal Entry</button>
+            </div>
+
+            <div class="selectMood" id="filterByMood">
+                <fieldset>
+                    <legend>Filter Journal Entries by Mood</legend>
+                    <input type="radio" name="moodFire" value="Mellow"><label>Mellow</label>
+                    <input type="radio" name="moodFire" value="Cheerful"><label>Cheerful</label>
+                    <input type="radio" name="moodFire" value="Stressed"><label>Stressed</label>
+                    <input type="radio" name="moodFire" value="Happy"><label>Happy</label>
+                    <input type="radio" name="moodFire" value="Giddy"><label>Giddy</label>
+                    <input type="radio" name="moodFire" value="Existential Crisis"><label>Existential Crisis</label>
+                    <input type="radio" name="moodFire" value="Cranky"><label>Cranky</label>
+                </fieldset>
+            </div>
     </form>
 
-    <article class="entryLog">
+    <!-- Edit Entry Form Section -->
 
-    </article>
+    <section id="entryForm">
+        <form>
+            <fieldset class="fieldset">
+                <input type="hidden" id="entryId" value="">
+                <label for="modifyDate">Change Date</label>
+                <input type="date" name="entryDate" id="editEntryDate">
+                <label for="entryConcept">Edit Concept</label>
+                <input type="text" id="editConceptsCovered" name="entryConcept">
+                <label for="entryJournal">Edit Entry</label>
+                <textarea type="text" id="editJournalEntry" name="entryJournal" rows="10" cols="50"></textarea>
+                <label for="modifyMood">Change Mood</label>
+                <select class="dropdown" id="editMood">
 
-<script type="module" src="../src/scripts/journal.js"></script>
+                </select>
+                <button type="button" id="editButton">Edit your Entry</button>
+            </fieldset>
+
+            <!--Search Bar-->
+            <fieldset id="searchInput">
+                <legend>Search Journal</legend>
+                <input type="search" id="searchBar" value="">
+            </fieldset>
+
+            <article class="entryLog"></article>
+
+            <script type="module" src="../src/scripts/journal.js"></script>
 </body>
 
 </html>

@@ -1,11 +1,11 @@
 {
   "journalEntries": [
     {
-      "id": 1,
-      "date": "August 22nd 2019",
-      "concepts": "First Group Project",
-      "entry": "We finished up our first group project.  It's amazing how much we've done.",
-      "mood": "happy"
+      "date": "",
+      "conceptsCovered": "",
+      "journalEntry": "",
+      "mood": "",
+      "id": 1
     },
     {
       "id": 2,
@@ -20,7 +20,27 @@
       "concepts": "Intro to JavaScript",
       "entry": "We launched into JavaScript today.  This is going to be tough",
       "mood": "existential crisis"
+    },
+    {
+      "date": "2019-10-06",
+      "concepts": "journal",
+      "entry": "I'm still working on you",
+      "mood": "Mellow",
+      "id": 4
+    },
+    {
+      "date": "2019-10-07",
+      "concepts": "it's the future",
+      "entry": "who knows",
+      "mood": "Stressed",
+      "id": 5
+    },
+    {
+      "date": "2019-10-31",
+      "concepts": "halloween",
+      "entry": "spooky",
+      "mood": "Giddy",
+      "id": 6
     }
-  ],
-  "mood": []
+  ]
 }

@@ -7,6 +7,8 @@ const createThing = (entry) => {
     <p>${entry.concepts}</p>
     <p>${entry.entry} </p>
     <p>${entry.mood}</p>
+    <button type="button" id="deleteEntry--${entry.id}">Delete Entry</button>
+    <button type="button" id="editEntry--${entry.id}">Edit Entry</button>
     </div>
             `
 }

@@ -3,9 +3,7 @@ import addjournalEntriesToDom from "./entriesDom.js";
 import entryFactoryWorker from "./entryFactory.js";
 
 API.journalEntries().then(allEntries => {
-  allEntries.forEach(entries => {
-    addjournalEntriesToDom(entries);
-  });
+  addjournalEntriesToDom.createdEntry(allEntries);
 });
 
 // Event listener for the Record Entry button
@@ -33,11 +31,12 @@ document.querySelector(".recordEntryButton").addEventListener("click", () => {
   API.saveJournalEntry(newEntryObject).then(() => {
     // get all the entries again
     API.journalEntries().then(newEntryObject => {
-      someEntry.addjournalEntriesToDom(newEntryObject);
+      addjournalEntriesToDom.createdEntry(newEntryObject);
     });
   });
 });
 
+// filtering moods
 const moods = document.getElementsByName("mood");
 
 moods.forEach(radioButton => {
@@ -45,7 +44,60 @@ moods.forEach(radioButton => {
     const moodFeeling = event.target.value;
     API.journalEntries()
       .then(data => {
-        journalEntries.filter(data, moodFeeling)
+        addjournalEntriesToDom.journalFilter(data, moodFeeling)
       })
   })
 });
+
+// delete button for journal entry
+document.querySelector(".entryLog").addEventListener("click", event => {
+  if (event.target.id.startsWith("deleteEntry--")) {
+    API.deleteEntries(event.target.id.split("--")[1])
+      .then(() => {
+        document.querySelector(".entryLog").innerHTML = "";
+        API.addjournalEntriesToDom().then(data => {
+          addjournalEntriesToDom.createdEntry(data)
+        })
+
+      })
+  } else if (event.target.id.startsWith("editJournalEntry")) {
+    editForm(event.target.id.split("--")[1])
+  }
+})
+
+// edit form for changing a journal entry
+
+const editForm = (entryId) => {
+  let hiddenId = document.querySelector("#entryId")
+  let editDate = document.querySelector("#editEntryDate")
+  let editConcepts = document.querySelector("#editConceptsCovered")
+  let editJournalEntry = document.querySelector("#editJournalEntry")
+  let editMood = document.querySelector("#editMood")
+
+  API.getSingleEntry(entryId)
+    .then(response => {
+      hiddenId.value = entryId
+      editDate.value = response.date
+      editConcepts.value = response.concepts
+      editJournalEntry.value = response.entry
+      editMood.value = response.mood
+    })
+}
+
+// event listener for the edit button
+
+document.querySelector("#editButton").addEventListener("click", (event) => {
+
+  API.editEntries(document.querySelector("#entryId").value)
+    .then((response => {
+      document.querySelector("#editEntryDate").value = "";
+      document.querySelector("#editConceptsCovered").value = "";
+      document.querySelector("#editJournalEntry").value = "";
+      document.querySelector("#editMood").value = "";
+      document.querySelector(".entryLog").innerHTML = "";
+      API.journalEntries().then(data => {
+        addjournalEntriesToDom.createdEntry(data)
+      })
+
+    }))
+})
